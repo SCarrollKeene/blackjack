@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;;
   font-weight: 400;
   background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
