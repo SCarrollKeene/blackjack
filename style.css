@@ -113,3 +113,16 @@ body {
 .margin-bottom-sm {
   margin-bottom: var(--margin-bottom-sm);
 }
+
+/* Media Queries */
+/* 650 px / 16 = 40.625 em */
+@media only screen and (max-width: 40.625em) {
+  .container {
+    margin-top: 0;
+  }
+  #new-game-button,
+  #hit-button,
+  #stay-button {
+    font-size: 2.2rem;
+  }
+}
