@@ -1,6 +1,8 @@
 :root {
   --color-primary: #ff0000;
+  --color-primary-hover: #ff0000d5;
   --color-secondary: #ff0055;
+  --color-secondary-hover: #ff0055d5;
   --color-white: #ffffff;
 
   --box-shadow: 0 2rem 6rem rgba(0,0,0,.6);
@@ -35,9 +37,9 @@ body {
   text-align: center;
   padding: 20px 14px 10px 14px;
 
-  max-width: 120rem;
+  max-width: 100rem;
   margin: 8rem auto;
-  min-height: 100rem;
+  min-height: 70rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
@@ -47,6 +49,64 @@ body {
   background-color: var(--color-white);
   padding: 2rem 2rem 2rem 2rem;
   box-shadow: var(--box-shadow);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-container {
+  display: flex;
+}
+
+#new-game-button {
+  font-size: inherit;
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  padding: 1.2rem;
+  border-radius: 3rem;
+}
+
+#new-game-button:hover {
+  text-decoration: underline;
+  background-color: var(--color-secondary-hover);
+}
+
+#hit-button {
+  font-size: inherit;
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  padding: 1.2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+#hit-button:hover {
+  text-decoration: underline;
+  background-color: var(--color-primary-hover);
+}
+
+#stay-button {
+  font-size: inherit;
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  padding: 1.2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+#stay-button:hover {
+  text-decoration: underline;
+  background-color: var(--color-secondary-hover);
 }
 
 /* Utility Classes */
