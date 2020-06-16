@@ -1,7 +1,6 @@
-//
-// Blackjack
-// By Stephen Carroll-Keene
-//
+/*
+* Blackjack by Stephen Carroll-Keene
+*/
 
 // Card variables
 let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
@@ -9,11 +8,13 @@ let values = ['Ace', 'King', 'Queen', 'Jack',
   'Ten', 'Nine', 'Eight', 'Seven', 'Six',
   'Five', 'Four', 'Three', 'Two'];
 
-// DOM variables
-let textArea = document.getElementById('text-area'),
-  newGameButton = document.getElementById('new-game-button'),
-  hitButton = document.getElementById('hit-button'),
-  stayButton = document.getElementById('stay-button');
+// DOM variables stored in elements object
+let elements = {
+    textArea: document.getElementById('text-area'),
+    newGameButton: document.getElementById('new-game-button'),
+    hitButton: document.getElementById('hit-button'),
+    stayButton: document.getElementById('stay-button')
+};
 
 // Game Variables
 let gameStart = false,
@@ -26,12 +27,12 @@ let gameStart = false,
   deck = [];
 
 // hides hit/stay until new game event listener is triggered by 'click'
-hitButton.style.display = 'none';
-stayButton.style.display = 'none';
+elements.hitButton.style.display = 'none';
+elements.stayButton.style.display = 'none';
 showStatus();
 
 // handler for when player clicks new game button
-newGameButton.addEventListener('click', function() {
+elements.newGameButton.addEventListener('click', function() {
   gameStart = true;
   gameOver = false;
   playerWin = false;
@@ -41,19 +42,19 @@ newGameButton.addEventListener('click', function() {
   dealerCards = [getNextCard(), getNextCard()];
   playerCards = [getNextCard(), getNextCard()];
 
-  newGameButton.style.display = 'none';
-  hitButton.style.display = 'inline';
-  stayButton.style.display = 'inline';
+  elements.newGameButton.style.display = 'none';
+  elements.hitButton.style.display = 'inline';
+  elements.stayButton.style.display = 'inline';
   showStatus();
 });
 
-hitButton.addEventListener('click', function() {
+elements.hitButton.addEventListener('click', function() {
   playerCards.push(getNextCard());
   checkForEndOfGame();
   showStatus();
 });
 
-stayButton.addEventListener('click', function() {
+elements.stayButton.addEventListener('click', function() {
   gameOver = true;
   checkForEndOfGame();
   showStatus();
@@ -169,7 +170,7 @@ function checkForEndOfGame() {
 
 function showStatus() {
   if (!gameStart) {
-    textArea.innerText = "Welcome to Blackjack!";
+    elements.textArea.innerText = "Welcome to Blackjack!";
     return;
   }
 
@@ -185,7 +186,7 @@ function showStatus() {
 
   updateScores();
 
-  textArea.innerText =
+  elements.textArea.innerText =
   'Dealer has:\n' +
   dealerCardString +
   '(score: ' + dealerScore + ')\n\n' +
@@ -196,21 +197,21 @@ function showStatus() {
 
   if(gameOver) {
     if(playerWin) {
-      textArea.innerText += "WINNER!";
+      elements.textArea.innerText += "WINNER!";
     }
     else if (dealerScore === playerScore) {
-      textArea.innerText += "TIE GAME!";
+      elements.textArea.innerText += "TIE GAME!";
     }
     else if (dealerScore === 21
     && playerScore === 21) {
-      textArea.innerText += 'TIE GAME!';
+      elements.textArea.innerText += 'TIE GAME!';
     }
     else {
-      textArea.innerText += "DEALER WINS!";
+      elements.textArea.innerText += "DEALER WINS!";
     }
-    newGameButton.style.display = 'inline';
-    hitButton.style.display = 'none';
-    stayButton.style.display = 'none';
-  }
 
+    elements.newGameButton.style.display = 'inline';
+    elements.hitButton.style.display = 'none';
+    elements.stayButton.style.display = 'none';
+  }
 }
