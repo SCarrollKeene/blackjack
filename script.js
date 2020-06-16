@@ -48,13 +48,13 @@ elements.newGameButton.addEventListener('click', () => {
   showStatus();
 });
 
-elements.hitButton.addEventListener('click', function() {
+elements.hitButton.addEventListener('click', () => {
   playerCards.push(getNextCard());
   checkForEndOfGame();
   showStatus();
 });
 
-elements.stayButton.addEventListener('click', function() {
+elements.stayButton.addEventListener('click', () => {
   gameOver = true;
   checkForEndOfGame();
   showStatus();
@@ -88,7 +88,7 @@ function getCardString(card) {
 }
 
 function getNextCard() {
-  return deck.shift(); //take 1st value off and shift cards down in the array
+  return deck.shift(); // take 1st value off and shift cards down in the array
 }
 
 function getCardNumericValue(card) {
