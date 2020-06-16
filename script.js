@@ -197,7 +197,7 @@ function showStatus() {
 
   if(gameOver) {
     if(playerWin) {
-      elements.textArea.innerText += "WINNER!";
+      elements.textArea.innerText += "WINNER!!!";
     }
     else if (dealerScore === playerScore) {
       elements.textArea.innerText += "TIE GAME!";
@@ -207,7 +207,7 @@ function showStatus() {
       elements.textArea.innerText += 'TIE GAME!';
     }
     else {
-      elements.textArea.innerText += "DEALER WINS!";
+      elements.textArea.innerText += "BUST, DEALER WINS!";
     }
 
     elements.newGameButton.style.display = 'inline';
