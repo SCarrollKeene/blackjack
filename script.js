@@ -32,7 +32,7 @@ elements.stayButton.style.display = 'none';
 showStatus();
 
 // handler for when player clicks new game button
-elements.newGameButton.addEventListener('click', function() {
+elements.newGameButton.addEventListener('click', () => {
   gameStart = true;
   gameOver = false;
   playerWin = false;
