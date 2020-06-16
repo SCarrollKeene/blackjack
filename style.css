@@ -4,6 +4,7 @@
   --color-secondary: #ff0055;
   --color-secondary-hover: #ff0055d5;
   --color-white: #ffffff;
+  --color-text: #333;
 
   --box-shadow: 0 2rem 6rem rgba(0,0,0,.6);
   --margin-bottom-sm: 2rem;
@@ -24,6 +25,7 @@ html {
 }
 
 body {
+  color: var(--color-text);
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;;
   font-weight: 400;
