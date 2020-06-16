@@ -4,6 +4,7 @@
   --color-white: #ffffff;
 
   --box-shadow: 0 2rem 6rem rgba(0,0,0,.6);
+  --margin-bottom-sm: 2rem;
 }
 
 /* Global Reset Styling */
@@ -30,7 +31,7 @@ body {
   min-height: 100vh;
 }
 
-#container {
+.container {
   text-align: center;
   padding: 20px 14px 10px 14px;
 
@@ -42,8 +43,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
 }
 
-#innerContainer {
+.inner-container {
   background-color: var(--color-white);
   padding: 2rem 2rem 2rem 2rem;
   box-shadow: var(--box-shadow);
+}
+
+/* Utility Classes */
+.margin-bottom-sm {
+  margin-bottom: var(--margin-bottom-sm);
 }
